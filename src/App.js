@@ -13,7 +13,10 @@ function App() {
   const [booked, setbooked] = useState([[], [], [], [], [], [], [], [], [], [], [], []]);
   const [result, setresult] = useState("");
   const [status, setstatus] = useState(arr);
-
+  
+  
+//function for handling booking
+  
   const handleBook = () => {
 
     console.log(status[60]);
@@ -34,8 +37,11 @@ function App() {
       return;
     }
 
+    //Running Loop for number of row times
+    
     for (let i = 0; i < 12; i++) {
 
+      // for last row
       if (i === 11) {
 
         if ((3 - (booked[i].length)) >= number) {
@@ -62,6 +68,9 @@ function App() {
         }
       }
 
+      
+      // for other rows
+      
       else if (i < 11) {
         if ((7 - (booked[i].length)) >= number) {
           let res = [];
